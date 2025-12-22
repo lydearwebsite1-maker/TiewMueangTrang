@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>About - เกี่ยวกับอำเภอเมืองตรัง</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #7ab8bf; --secondary: #a594c7; --bg-light: #fcf7fa; --text-dark: #4a4a4a; }
+        body { font-family: 'Sarabun', sans-serif; background: var(--bg-light); color: var(--text-dark); margin: 0; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Kanit', sans-serif; }
+
+        /* Navbar Pastel */
+        nav { background: linear-gradient(to right, #f3e5f5, #f8bbd0); padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 20px;
+            flex-wrap: wrap; 
+        }
+        .menu-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; } 
+        nav a { text-decoration: none; color: #555; font-weight: 500; padding: 8px 15px; border-radius: 50px; transition: 0.3s; }
+        nav a:hover, nav a.active { background: var(--secondary); color: #fff; }
+
+        .header-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://img.salehere.co.th/p/1200x0/2023/05/23/kdiv8yacqzsu.jpg');
+            background-size: cover; 
+            background-position: center; 
+            height: 300px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .content-row { display: flex; flex-wrap: wrap; margin-bottom: 40px; align-items: flex-start; } /* ปรับเป็น flex-start เพื่อให้ยืดหยุ่น */
+        .col-img { flex: 1; min-width: 300px; padding: 10px; }
+        .col-img img { width: 100%; border-radius: 10px; object-fit: cover; }
+        .col-text { flex: 1.5; min-width: 300px; padding: 20px; }
+        .col-text h2 { color: var(--secondary); margin-bottom: 15px; border-bottom: 2px solid #f3e5f5; padding-bottom: 10px; display: inline-block; }
+        
+        /* สไตล์สำหรับลิสต์รายการ */
+        ul.border-list { list-style: none; padding: 0; }
+        ul.border-list li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+        ul.border-list li::before { content: "➤"; color: var(--primary); position: absolute; left: 0; }
+
+        /* สไตล์ตาราง 15 ตำบล */
+        .district-box { background-color: #f0f8ff; padding: 20px; border-radius: 10px; margin-top: 20px; }
+        .district-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .district-item {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        /* CSS สำหรับปุ่มเปลี่ยนภาษา */
+        .lang-switcher { display: flex; gap: 5px; }
+        .btn-lang {
+            cursor: pointer;
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .btn-lang:hover { background: #fff; }
+        
+        /* ซ่อนภาษา */
+        .lang-en, .lang-cn { display: none; }
+    </style>
+
+    <script>
+        function setLanguage(lang) {
+            var content = document.querySelectorAll('.lang-th, .lang-en, .lang-cn');
+            for (var i = 0; i < content.length; i++) {
+                content[i].style.display = 'none';
+            }
+            var show = document.querySelectorAll('.lang-' + lang);
+            for (var i = 0; i < show.length; i++) {
+                if(show[i].tagName == 'SPAN' || show[i].parentElement.tagName == 'A') {
+                    show[i].style.display = 'inline';
+                } else {
+                    show[i].style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="menu-group">
+                <a href="index.html">
+                    <span class="lang-th">หน้าแรก</span>
+                    <span class="lang-en">Home</span>
+                    <span class="lang-cn">首页</span>
+                </a>
+                <a href="about.html" class="active">
+                    <span class="lang-th">เกี่ยวกับเรา</span>
+                    <span class="lang-en">About</span>
+                    <span class="lang-cn">关于我们</span>
+                </a>
+                <a href="subdistricts.html">
+                    <span class="lang-th">15 ตำบล</span>
+                    <span class="lang-en">15 Subdistricts</span>
+                    <span class="lang-cn">15 个街道</span>
+                </a>
+                <a href="feedback.html">
+                    <span class="lang-th">ข้อเสนอแนะ</span>
+                    <span class="lang-en">Feedback</span>
+                    <span class="lang-cn">反馈</span>
+                </a>
+                <a href="contact.html">
+                    <span class="lang-th">ติดต่อเรา</span>
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-cn">联系我们</span>
+                </a>
+            </div>
+            
+            <div class="lang-switcher">
+                <span class="btn-lang" onclick="setLanguage('th')">🇹🇭 TH</span>
+                <span class="btn-lang" onclick="setLanguage('en')">🇬🇧 EN</span>
+                <span class="btn-lang" onclick="setLanguage('cn')">🇨🇳 CN</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-bg">
+        <h1>
+            <span class="lang-th">เกี่ยวกับอำเภอเมืองตรัง</span>
+            <span class="lang-en">About Mueang Trang District</span>
+            <span class="lang-cn">关于董里府直辖县</span>
+        </h1>
+    </div>
+
+    <div class="container">
+        <div class="content-row">
+            <div class="col-img"><img src="https://wp-assets.dotproperty-kh.com/wp-content/uploads/sites/9/2016/11/29172501/trang.png" alt="History"></div>
+            <div class="col-text">
+                <h2>
+                    <span class="lang-th">ประวัติความเป็นมา</span>
+                    <span class="lang-en">History</span>
+                    <span class="lang-cn">历史背景</span>
+                </h2>
+                <p>
+                    <span class="lang-th">อำเภอเมืองตรัง มีประวัติการตั้งรกรากริมฝั่งแม่น้ำตรังมาตั้งแต่สมัยโบราณ เดิมชื่อ "อำเภอบางรัก" ตามชื่อตำบลที่ตั้งที่ว่าการอำเภอ ต่อมาได้ย้ายที่ว่าการอำเภอไปที่ตำบลทับเที่ยง และเปลี่ยนชื่อเป็น "อำเภอเมืองตรัง" ในปี พ.ศ. 2481</span>
+                    <span class="lang-en">Mueang Trang District has a history of settlement along the banks of the Trang River since ancient times. Originally named "Bang Rak District". Later, the district office was moved to Thap Thiang Subdistrict and renamed "Mueang Trang District" in 1938.</span>
+                    <span class="lang-cn">董里府直辖县的历史可以追溯到古代沿董里河两岸的定居点。最初名为“Bang Rak 县”。后来，县公署迁至 Thap Thiang 街道，并于 1938 年更名为“董里府直辖县”。</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="content-row" style="flex-direction: row-reverse;">
+            <div class="col-img"><img src="trang.jfif" alt="Geography"></div>
+            <div class="col-text">
+                <h2>
+                    <span class="lang-th">ภูมิประเทศและอาณาเขต</span>
+                    <span class="lang-en">Geography & Boundaries</span>
+                    <span class="lang-cn">地理与边界</span>
+                </h2>
+                <p style="margin-bottom: 15px;">
+                    <span class="lang-th">อำเภอเมืองตรังมีสภาพเป็นเนินสูงต่ำสลับกับที่ราบ มีแม่น้ำสำคัญไหลผ่าน คือแม่น้ำตรัง </span>
+                    <span class="lang-en">The terrain consists of undulating hills alternating with plains, with the important Trang River flowing through. </span>
+                    <span class="lang-cn">地形由起伏的丘陵和平原组成，重要的董里河流经其中。</span>
+                </p>
+                
+                <strong>
+                    <span class="lang-th">อาณาเขตติดต่อ:</span>
+                    <span class="lang-en">Boundaries:</span>
+                    <span class="lang-cn">边界:</span>
+                </strong>
+                <ul class="border-list">
+                    <li>
+                        <span class="lang-th">ทิศเหนือ: ติดต่อกับอำเภอวังวิเศษและอำเภอห้วยยอด </span>
+                        <span class="lang-en">North: Borders Wang Wiset and Huai Yot Districts. </span>
+                        <span class="lang-cn">北: 接壤 Wang Wiset 和 Huai Yot 县。</span>
+                    </li>
+                    <li>
+                        <span class="lang-th">ทิศตะวันออก: ติดต่อกับอำเภอศรีบรรพต (จ.พัทลุง) และอำเภอนาโยง </span>
+                        <span class="lang-en">East: Borders Si Banphot District (Phatthalung) and Na Yong District. </span>
+                        <span class="lang-cn">东: 接壤 Si Banphot 县 (博他仑府) 和 Na Yong 县。</span>
+                    </li>
+                    <li>
+                        <span class="lang-th">ทิศใต้: ติดต่อกับอำเภอนาโยง อำเภอย่านตาขาว และอำเภอกันตัง </span>
+                        <span class="lang-en">South: Borders Na Yong, Yan Ta Khao, and Kantang Districts. </span>
+                        <span class="lang-cn">南: 接壤 Na Yong, Yan Ta Khao, 和 Kantang 县。</span>
+                    </li>
+                    <li>
+                        <span class="lang-th">ทิศตะวันตก: ติดต่อกับอำเภอกันตัง อำเภอสิเกา และอำเภอวังวิเศษ </span>
+                        <span class="lang-en">West: Borders Kantang, Sikao, and Wang Wiset Districts. </span>
+                        <span class="lang-cn">西: 接壤 Kantang, Sikao, 和 Wang Wiset 县。</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="district-box">
+            <h2 style="text-align: center;">
+                <span class="lang-th">การปกครองส่วนภูมิภาค (15 ตำบล)</span>
+                <span class="lang-en">Provincial Administration (15 Subdistricts)</span>
+                <span class="lang-cn">省级行政区 (15 个街道)</span>
+            </h2>
+            <div class="district-grid">
+                <div class="district-item">
+                    <span class="lang-th">1. ต.ทับเที่ยง</span><span class="lang-en">1. Thap Thiang</span><span class="lang-cn">1. Thap Thiang</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">2. ต.นาพละ</span><span class="lang-en">2. Na Phla</span><span class="lang-cn">2. Na Phla</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">3. ต.บ้านควน</span><span class="lang-en">3. Ban Khuan</span><span class="lang-cn">3. Ban Khuan</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">4. ต.นาบินหลา</span><span class="lang-en">4. Na Bin La</span><span class="lang-cn">4. Na Bin La</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">5. ต.ควนปริง</span><span class="lang-en">5. Khuan Pring</span><span class="lang-cn">5. Khuan Pring</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">6. ต.นาโยงใต้</span><span class="lang-en">6. Na Yong Tai</span><span class="lang-cn">6. Na Yong Tai</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">7. ต.บางรัก</span><span class="lang-en">7. Bang Rak</span><span class="lang-cn">7. Bang Rak</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">8. ต.โคกหล่อ</span><span class="lang-en">8. Khok Lo</span><span class="lang-cn">8. Khok Lo</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">9. ต.นาโต๊ะหมิง</span><span class="lang-en">9. Na To Ming</span><span class="lang-cn">9. Na To Ming</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">10. ต.หนองตรุด</span><span class="lang-en">10. Nong Trud</span><span class="lang-cn">10. Nong Trud</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">11. ต.น้ำผุด</span><span class="lang-en">11. Nam Phut</span><span class="lang-cn">11. Nam Phut</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">12. ต.นาตาล่วง</span><span class="lang-en">12. Na Ta Luang</span><span class="lang-cn">12. Na Ta Luang</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">13. ต.บ้านโพธิ์</span><span class="lang-en">13. Ban Pho</span><span class="lang-cn">13. Ban Pho</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">14. ต.นาท่ามเหนือ</span><span class="lang-en">14. Na Tham Nuea</span><span class="lang-cn">14. Na Tham Nuea</span>
+                </div>
+                <div class="district-item">
+                    <span class="lang-th">15. ต.นาท่ามใต้</span><span class="lang-en">15. Na Tham Tai</span><span class="lang-cn">15. Na Tham Tai</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

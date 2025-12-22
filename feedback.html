@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - แสดงความคิดเห็น</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- Theme Variables --- */
+        :root { 
+            --primary: #7ab8bf; 
+            --secondary: #a594c7; 
+            --bg-light: #fcf7fa; 
+            --text-dark: #4a4a4a; 
+            --nav-bg-start: #f3e5f5;
+            --nav-bg-end: #f8bbd0;
+        }
+
+        body { 
+            font-family: 'Sarabun', sans-serif; 
+            background: var(--bg-light); 
+            color: var(--text-dark); 
+            margin: 0; 
+            line-height: 1.6; 
+        }
+        h1, h2, h3 { font-family: 'Kanit', sans-serif; }
+
+        /* --- Navbar --- */
+        nav { 
+            background: linear-gradient(to right, var(--nav-bg-start), var(--nav-bg-end)); 
+            padding: 15px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 20px;
+            flex-wrap: wrap; 
+        }
+        .menu-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        
+        nav a { 
+            text-decoration: none; 
+            color: #555; 
+            font-weight: 500; 
+            padding: 8px 15px; 
+            border-radius: 50px; 
+            transition: 0.3s; 
+            text-align: center;
+        }
+        nav a:hover, nav a.active { 
+            background: var(--secondary); 
+            color: #fff; 
+        }
+
+        /* --- Language Switcher --- */
+        .lang-switcher { display: flex; gap: 5px; }
+        .btn-lang {
+            cursor: pointer;
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .btn-lang:hover { background: #fff; }
+        
+        /* ซ่อนภาษา */
+        .lang-en, .lang-cn { display: none; }
+
+        /* --- Header Background --- */
+        .header-bg {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://img.kapook.com/u/2018/surauch/travel/trang/t1.jpg');
+            background-size: cover; 
+            background-position: center; 
+            height: 250px; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .header-bg h1 { font-size: 2.5rem; margin: 0; }
+        .header-bg p { font-size: 1.1rem; margin-top: 10px; font-weight: 300; }
+
+        /* --- Form Container --- */
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto 50px auto; 
+            padding: 40px; 
+            background: #fff; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); 
+            border: 1px solid #f0edf0;
+        }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--secondary); }
+        .form-group input[type="text"], 
+        .form-group input[type="email"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: 0.3s;
+            background-color: #fafafa;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary); 
+            outline: none;
+            background-color: #fff;
+        }
+
+        /* --- Rating Styles --- */
+        .rating-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .rating-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .rating-item input {
+            cursor: pointer;
+            accent-color: var(--primary);
+            width: 18px;
+            height: 18px;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background: var(--primary); 
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Kanit', sans-serif;
+            margin-top: 30px;
+        }
+        .btn-submit:hover {
+            background: #69a0a7; 
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(122, 184, 191, 0.3);
+        }
+
+    </style>
+
+    <script>
+        function setLanguage(lang) {
+            var content = document.querySelectorAll('.lang-th, .lang-en, .lang-cn');
+            for (var i = 0; i < content.length; i++) {
+                content[i].style.display = 'none';
+            }
+            var show = document.querySelectorAll('.lang-' + lang);
+            for (var i = 0; i < show.length; i++) {
+                if(show[i].tagName == 'SPAN' || show[i].parentElement.tagName == 'A' || show[i].tagName == 'LABEL') {
+                    show[i].style.display = 'inline';
+                } else {
+                    show[i].style.display = 'block';
+                }
+            }
+            
+            // เปลี่ยน Placeholder ตามภาษา
+            if(lang === 'th') {
+                document.getElementById('name').placeholder = "ระบุชื่อ...";
+                document.getElementById('email').placeholder = "example@email.com";
+                document.getElementById('message').placeholder = "เขียนข้อความของคุณที่นี่...";
+            } else if(lang === 'en') {
+                document.getElementById('name').placeholder = "Enter your name...";
+                document.getElementById('email').placeholder = "example@email.com";
+                document.getElementById('message').placeholder = "Write your message here...";
+            } else if(lang === 'cn') {
+                document.getElementById('name').placeholder = "输入您的姓名...";
+                document.getElementById('email').placeholder = "example@email.com";
+                document.getElementById('message').placeholder = "在这里写下您的信息...";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="menu-group">
+                <a href="index.html">
+                    <span class="lang-th">หน้าแรก</span>
+                    <span class="lang-en">Home</span>
+                    <span class="lang-cn">首页</span>
+                </a>
+                <a href="about.html">
+                    <span class="lang-th">เกี่ยวกับเรา</span>
+                    <span class="lang-en">About</span>
+                    <span class="lang-cn">关于我们</span>
+                </a>
+                <a href="subdistricts.html">
+                    <span class="lang-th">15 ตำบล</span>
+                    <span class="lang-en">15 Subdistricts</span>
+                    <span class="lang-cn">15 个街道</span>
+                </a>
+                <a href="feedback.html" class="active">
+                    <span class="lang-th">ข้อเสนอแนะ</span>
+                    <span class="lang-en">Feedback</span>
+                    <span class="lang-cn">反馈</span>
+                </a>
+                <a href="contact.html">
+                    <span class="lang-th">ติดต่อเรา</span>
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-cn">联系我们</span>
+                </a>
+            </div>
+            
+            <div class="lang-switcher">
+                <span class="btn-lang" onclick="setLanguage('th')">🇹🇭 TH</span>
+                <span class="btn-lang" onclick="setLanguage('en')">🇬🇧 EN</span>
+                <span class="btn-lang" onclick="setLanguage('cn')">🇨🇳 CN</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header-bg">
+        <h1>
+            <span class="lang-th">แสดงความคิดเห็น</span>
+            <span class="lang-en">Feedback</span>
+            <span class="lang-cn">反馈意见</span>
+        </h1>
+        <p>
+            <span class="lang-th">คำแนะนำของคุณมีค่า เพื่อการพัฒนาเว็บไซต์ของเรา</span>
+            <span class="lang-en">Your suggestions are valuable for our website development.</span>
+            <span class="lang-cn">您的建议对我们网站的发展非常有价值。</span>
+        </p>
+    </div>
+
+    <div class="container">
+        
+        <form action="https://formspree.io/f/myzrobno" method="POST">
+            
+            <div class="form-group">
+                <label for="name">
+                    <span class="lang-th">ชื่อของคุณ (Name):</span>
+                    <span class="lang-en">Your Name:</span>
+                    <span class="lang-cn">您的姓名:</span>
+                </label>
+                <input type="text" id="name" name="name" placeholder="ระบุชื่อ..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    <span class="lang-th">อีเมล (Email):</span>
+                    <span class="lang-en">Email Address:</span>
+                    <span class="lang-cn">电子邮件地址:</span>
+                </label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span class="lang-th">ความพึงพอใจต่อเว็บไซต์:</span>
+                    <span class="lang-en">Website Satisfaction:</span>
+                    <span class="lang-cn">网站满意度:</span>
+                </label>
+                <div class="rating-group">
+                    <label class="rating-item">
+                        <input type="radio" name="rating" value="Very Good" required>
+                        <span class="lang-th">ดีมาก</span>
+                        <span class="lang-en">Very Good</span>
+                        <span class="lang-cn">非常满意</span>
+                    </label>
+                    <label class="rating-item">
+                        <input type="radio" name="rating" value="Good">
+                        <span class="lang-th">ดี</span>
+                        <span class="lang-en">Good</span>
+                        <span class="lang-cn">满意</span>
+                    </label>
+                    <label class="rating-item">
+                        <input type="radio" name="rating" value="Fair">
+                        <span class="lang-th">ปานกลาง</span>
+                        <span class="lang-en">Fair</span>
+                        <span class="lang-cn">一般</span>
+                    </label>
+                    <label class="rating-item">
+                        <input type="radio" name="rating" value="Poor">
+                        <span class="lang-th">พอใช้</span>
+                        <span class="lang-en">Poor</span>
+                        <span class="lang-cn">差</span>
+                    </label>
+                    <label class="rating-item">
+                        <input type="radio" name="rating" value="Need Improvement">
+                        <span class="lang-th">ปรับปรุง</span>
+                        <span class="lang-en">Need Improvement</span>
+                        <span class="lang-cn">需要改进</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">
+                    <span class="lang-th">ความคิดเห็น / ข้อเสนอแนะ (Message):</span>
+                    <span class="lang-en">Comments / Suggestions:</span>
+                    <span class="lang-cn">评论 / 建议:</span>
+                </label>
+                <textarea id="message" name="message" rows="6" placeholder="เขียนข้อความของคุณที่นี่..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <span class="lang-th">ส่งความคิดเห็น</span>
+                <span class="lang-en">Send Feedback</span>
+                <span class="lang-cn">发送反馈</span>
+            </button>
+        </form>
+
+    </div>
+
+</body>
+</html>

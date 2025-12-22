@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - ผู้จัดทำ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- Theme Variables --- */
+        :root { 
+            --primary: #7ab8bf; 
+            --secondary: #a594c7; 
+            --bg-light: #fcf7fa; 
+            --text-dark: #4a4a4a; 
+            --nav-bg-start: #f3e5f5;
+            --nav-bg-end: #f8bbd0;
+        }
+
+        body { 
+            font-family: 'Sarabun', sans-serif; 
+            background: var(--bg-light); 
+            color: var(--text-dark); 
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+        }
+        h1, h2, h3, h4 { font-family: 'Kanit', sans-serif; }
+
+        /* --- Navbar --- */
+        nav { 
+            background: linear-gradient(to right, var(--nav-bg-start), var(--nav-bg-end)); 
+            padding: 15px 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; /* ปรับเป็น space-between */
+            align-items: center; 
+            padding: 0 20px;
+            flex-wrap: wrap; 
+        }
+        .menu-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        
+        nav a { 
+            text-decoration: none; 
+            color: #555; 
+            font-weight: 500; 
+            padding: 8px 15px; 
+            border-radius: 50px; 
+            transition: 0.3s; 
+            min-width: 80px;
+            text-align: center;
+        }
+        nav a:hover, nav a.active { 
+            background: var(--secondary); 
+            color: #fff; 
+        }
+
+        /* --- Language Switcher --- */
+        .lang-switcher { display: flex; gap: 5px; }
+        .btn-lang {
+            cursor: pointer;
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.6);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .btn-lang:hover { background: #fff; }
+        
+        /* ซ่อนภาษา */
+        .lang-en, .lang-cn { display: none; }
+
+        /* --- Content Layout --- */
+        .content-wrapper { 
+            flex: 1; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
+        }
+        
+        .profile-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(165, 148, 199, 0.2);
+            max-width: 500px;
+            width: 100%;
+            border: 2px solid #fff;
+            transition: transform 0.3s;
+        }
+        .profile-card:hover { transform: translateY(-5px); }
+        
+        .profile-img {
+            width: 150px; 
+            height: 150px; 
+            background: #ddd; 
+            border-radius: 50%; 
+            margin: 0 auto 20px;
+            
+            /* --- แก้ไขชื่อไฟล์รูปตรงนี้ครับ --- */
+            background-image: url('dear2.jfif'); /* เปลี่ยน dear.jfif เป็นชื่อไฟล์ของคุณ */
+            /* ----------------------------- */
+            
+            background-size: cover; 
+            background-position: center;
+            border: 5px solid var(--bg-light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 { color: var(--secondary); margin-bottom: 5px; }
+        h4 { color: var(--primary); margin-top: 0; font-weight: 400; }
+        p { margin: 5px 0; color: #666; }
+        
+        .contact-info { 
+            margin-top: 30px; 
+            border-top: 1px solid #eee; 
+            padding-top: 20px; 
+        }
+    </style>
+
+    <script>
+        function setLanguage(lang) {
+            var content = document.querySelectorAll('.lang-th, .lang-en, .lang-cn');
+            for (var i = 0; i < content.length; i++) {
+                content[i].style.display = 'none';
+            }
+            var show = document.querySelectorAll('.lang-' + lang);
+            for (var i = 0; i < show.length; i++) {
+                if(show[i].tagName == 'SPAN' || show[i].parentElement.tagName == 'A') {
+                    show[i].style.display = 'inline';
+                } else {
+                    show[i].style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="menu-group">
+                <a href="index.html">
+                    <span class="lang-th">หน้าแรก</span>
+                    <span class="lang-en">Home</span>
+                    <span class="lang-cn">首页</span>
+                </a>
+                <a href="about.html">
+                    <span class="lang-th">เกี่ยวกับเรา</span>
+                    <span class="lang-en">About</span>
+                    <span class="lang-cn">关于我们</span>
+                </a>
+                <a href="subdistricts.html">
+                    <span class="lang-th">15 ตำบล</span>
+                    <span class="lang-en">15 Subdistricts</span>
+                    <span class="lang-cn">15 个街道</span>
+                </a>
+                <a href="feedback.html">
+                    <span class="lang-th">ข้อเสนอแนะ</span>
+                    <span class="lang-en">Feedback</span>
+                    <span class="lang-cn">反馈</span>
+                </a>
+                <a href="contact.html" class="active">
+                    <span class="lang-th">ติดต่อเรา</span>
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-cn">联系我们</span>
+                </a>
+            </div>
+            
+            <div class="lang-switcher">
+                <span class="btn-lang" onclick="setLanguage('th')">🇹🇭 TH</span>
+                <span class="btn-lang" onclick="setLanguage('en')">🇬🇧 EN</span>
+                <span class="btn-lang" onclick="setLanguage('cn')">🇨🇳 CN</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="profile-card">
+            <div class="profile-img"></div>
+            
+            <h2>
+                <span class="lang-th">ผู้จัดทำสื่อประชาสัมพันธ์</span>
+                <span class="lang-en">Content Creator</span>
+                <span class="lang-cn">内容创作者</span>
+            </h2>
+            
+            <p style="font-size: 1.2rem; font-weight: bold; color: #333;">
+                <span class="lang-th">นางสาวธิติยา เถรว้อง</span>
+                <span class="lang-en">Ms. Thitiya Therawong</span>
+                <span class="lang-cn">Thitiya Therawong 女士</span>
+            </p>
+            
+            <p>
+                <span class="lang-th">นักศึกษาชั้น ปวส.2</span>
+                <span class="lang-en">High Vocational Certificate Student (2nd Year)</span>
+                <span class="lang-cn">职业高中文凭学生（二年级）</span>
+            </p>
+            
+            <p>
+                <span class="lang-th">วิทยาลัยอาชีวศึกษาโปลีเทคนิคตรัง</span>
+                <span class="lang-en">Trang Polytechnic College</span>
+                <span class="lang-cn">董里理工学院</span>
+            </p>
+            
+            <div class="contact-info">
+                <h4>
+                    <span class="lang-th">ติดต่อสอบถาม</span>
+                    <span class="lang-en">Contact Info</span>
+                    <span class="lang-cn">联系方式</span>
+                </h4>
+                <p>Email: thitiya96642@gmail.com</p>
+                <p>
+                    <span class="lang-th">เบอร์โทร:</span>
+                    <span class="lang-en">Tel:</span>
+                    <span class="lang-cn">电话:</span> 
+                    0612596642
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

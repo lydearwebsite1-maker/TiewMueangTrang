@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าแรก - เที่ยวเมืองตรัง</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Sarabun', sans-serif; background-color: #f5f5f5; color: #333; }
+        h1, h2, a { font-family: 'Kanit', sans-serif; }
+
+        /* Navbar */
+        nav { 
+            background: #fff; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #ddd; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: flex; 
+            justify-content: space-between; /* จัดให้เมนูอยู่ซ้าย ปุ่มภาษาอยู่ขวา */
+            align-items: center;
+            padding: 0 20px;
+        }
+        .menu-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 500; 
+            padding: 8px 15px; 
+            border-radius: 50px; 
+            transition: 0.3s; 
+            font-size: 16px;
+        }
+        nav a:hover, nav a.active { background: #333; color: #fff; }
+
+        /* ปุ่มเปลี่ยนภาษา */
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+        }
+        .btn-lang {
+            cursor: pointer;
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .btn-lang:hover { background: #ddd; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            background-image: radial-gradient(#444, #222);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .image-box {
+            max-width: 800px; /* ปรับขนาดให้พอดีจอ */
+            width: 100%;
+            border: 5px solid #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+        .image-box img { width: 100%; height: auto; display: block; }
+
+        .btn-enter {
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .btn-enter:hover { background: #000; color: #fff; transform: translateY(-5px); border: 2px solid #fff; }
+        
+        .motto { 
+            color: #ccc; 
+            margin-top: 20px; 
+            font-style: italic; 
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        /* ซ่อนภาษา */
+        .lang-en, .lang-cn { display: none; }
+    </style>
+
+    <script>
+        function setLanguage(lang) {
+            // ซ่อนทุกภาษาก่อน
+            var content = document.querySelectorAll('.lang-th, .lang-en, .lang-cn');
+            for (var i = 0; i < content.length; i++) {
+                content[i].style.display = 'none';
+            }
+            
+            // แสดงภาษาที่เลือก
+            var show = document.querySelectorAll('.lang-' + lang);
+            for (var i = 0; i < show.length; i++) {
+                // ถ้าเป็นข้อความในบรรทัด (เช่น เมนู) ให้แสดงแบบ inline
+                if(show[i].tagName == 'SPAN' || show[i].parentElement.tagName == 'A') {
+                    show[i].style.display = 'inline';
+                } else {
+                    show[i].style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="menu-links">
+                <a href="index.html" class="active">
+                    <span class="lang-th">หน้าแรก</span>
+                    <span class="lang-en">Home</span>
+                    <span class="lang-cn">首页</span>
+                </a>
+                <a href="about.html">
+                    <span class="lang-th">เกี่ยวกับเรา</span>
+                    <span class="lang-en">About Us</span>
+                    <span class="lang-cn">关于我们</span>
+                </a>
+                <a href="subdistricts.html">
+                    <span class="lang-th">15 ตำบล</span>
+                    <span class="lang-en">15 Subdistricts</span>
+                    <span class="lang-cn">15 个街道</span>
+                </a>
+                <a href="feedback.html">
+                    <span class="lang-th">ข้อเสนอแนะ</span>
+                    <span class="lang-en">Feedback</span>
+                    <span class="lang-cn">反馈</span>
+                </a>
+                <a href="contact.html">
+                    <span class="lang-th">ติดต่อเรา</span>
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-cn">联系我们</span>
+                </a>
+            </div>
+
+            <div class="lang-switcher">
+                <span class="btn-lang" onclick="setLanguage('th')">🇹🇭 TH</span>
+                <span class="btn-lang" onclick="setLanguage('en')">🇬🇧 EN</span>
+                <span class="btn-lang" onclick="setLanguage('cn')">🇨🇳 CN</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="image-box">
+            <img src="meang.jfif" alt="เที่ยวเมืองตรัง">
+        </div>
+        
+        <a href="about.html" class="btn-enter">
+            <span class="lang-th">เข้าสู่เว็บไซต์</span>
+            <span class="lang-en">Enter Website</span>
+            <span class="lang-cn">进入网站</span>
+        </a>
+        
+        <p class="motto">
+            <span class="lang-th">
+                "เมืองผู้นำยางพารา เทิดรัษฎานุประดิษฐ์ เมืองมิตรวัฒนธรรม หมูย่างติ่มซำรสเลิศ <br>เปิดประตูสู่อันดามัน สวรรค์นักท่องเที่ยว"
+            </span>
+            <span class="lang-en">
+                "City of Rubber, Honoring Phraya Ratsada, Friendly Culture, Delicious Roast Pork and Dim Sum, <br>Gateway to the Andaman, Tourist's Paradise."
+            </span>
+            <span class="lang-cn">
+                “橡胶之城，缅怀拉萨达 (Phraya Ratsada)，文化友邦，美味烤猪肉和点心，<br>通往安达曼海的门户，游客的天堂。”
+            </span>
+        </p>
+    </div>
+
+</body>
+</html>
