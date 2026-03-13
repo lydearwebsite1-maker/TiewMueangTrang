@@ -241,8 +241,8 @@
             display: none;
             padding: 30px;
             font-size: 1rem;
+            animation: fadeIn 0.3s;
         }
-        .tab-pane.show { display: block; }
         
         .tab-pane h3 { color: var(--primary); margin-top: 0; border-left: 4px solid var(--secondary); padding-left: 10px; }
         
@@ -265,23 +265,6 @@
         
         hr.divider { border: 0; border-top: 1px solid #eee; margin: 30px 0; }
     </style>
-
-    <script>
-        function setLanguage(lang) {
-            var content = document.querySelectorAll('.lang-th, .lang-en, .lang-cn');
-            for (var i = 0; i < content.length; i++) {
-                content[i].style.display = 'none';
-            }
-            var show = document.querySelectorAll('.lang-' + lang);
-            for (var i = 0; i < show.length; i++) {
-                if(show[i].tagName == 'SPAN' || show[i].parentElement.tagName == 'A' || show[i].tagName == 'B') {
-                    show[i].style.display = 'inline';
-                } else {
-                    show[i].style.display = 'block';
-                }
-            }
-        }
-    </script>
 </head>
 <body>
 
@@ -340,88 +323,43 @@
         <div class="grid">
             
             <div class="card" onclick="openModal('m-bangrak')">
-                <div class="card-img"><img src="https://images.dmc.tv/ebook/page/original_1760610634361.jpg" alt="บางรัก"></div>
+                <div class="card-img"><img src="https://images.dmc.tv/ebook/page/original_1760610634361.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Bang+Rak';" alt="บางรัก"></div>
                 <div class="card-content">
-                    <h3><span class="lang-th">1. ต.บางรัก</span><span class="lang-en">1. Bang Rak</span><span class="lang-cn">1. Bang Rak</span></h3>
-                    <p><span class="lang-th">เมืองท่าเก่าแก่ และวัดแจ้ง</span><span class="lang-en">Ancient Port & Wat Chaeng</span><span class="lang-cn">古港 & Wat Chaeng</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
+                <h3><span class="lang-th">1. ต.บางรัก</span><span class="lang-en">1. Bang Rak</span><span class="lang-cn">1. Bang Rak</span></h3>
+                <p><span class="lang-th">เมืองท่าเก่าแก่ และวัดแจ้ง</span><span class="lang-en">Ancient Port &amp; Wat Chaeng</span><span class="lang-cn">古港 &amp; Wat Chaeng</span></p>
+                <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
             </div>
+        </div>
 
-            <div class="card" onclick="openModal('m-nataluang')">
-                <div class="card-img"><img src="natalong.jpg" alt="นาตาล่วง"></div>
+        <div class="card" onclick="openModal('m-nataluang')">
+                <div class="card-img"><img src="natalong.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Na+Ta+Luang';" alt="นาตาล่วง"></div>
                 <div class="card-content">
-                    <h3><span class="lang-th">2. ต.นาตาล่วง</span><span class="lang-en">2. Na Ta Luang</span><span class="lang-cn">2. Na Ta Luang</span></h3>
-                    <p><span class="lang-th">ตำนานตาด้วง-ตาล่วง</span><span class="lang-en">Legend of Ta Duang</span><span class="lang-cn">Ta Duang 的传说</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
+                <h3><span class="lang-th">6. ต.บ้านโพธิ์</span><span class="lang-en">6. Ban Pho</span><span class="lang-cn">6. Ban Pho</span></h3>
+                <p><span class="lang-th">วัดขุนสิทธิ์ &amp; เรือพระ</span><span class="lang-en">Wat Khun Sit &amp; Buddha Boat</span><span class="lang-cn">Khun Sit 寺 &amp; 佛船</span></p>
+                <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
             </div>
+        </div>
 
-            <div class="card" onclick="openModal('m-nathannuea')">
-                <div class="card-img"><img src="https://lh4.googleusercontent.com/proxy/qBdlq7-oqUM-b2faPrf57ha6Fd7hhjFq9CDFdiW_h0nM6zaHAqayCG5Oyd7uZTe8PG3cdzhiKouMB-vigworCH0LoBNhuRW4FoxE29_-mWqnBwfrGEMpYekBGUBtgv9HKSHl1AoIs_r4W3NbKR8_iz3FMrI" alt="นาท่ามเหนือ"></div>
+        <div class="card" onclick="openModal('m-bankhuan')">
+                <div class="card-img"><img src="https://images.topnews.co.th/2025/02/Screenshot-2025-02-12-093115-1024x575.png?x-image-process=style/webp" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Ban+Khuan';" alt="บ้านควน"></div>
                 <div class="card-content">
-                    <h3><span class="lang-th">3. ต.นาท่ามเหนือ</span><span class="lang-en">3. Na Tham Nuea</span><span class="lang-cn">3. Na Tham Nuea</span></h3>
-                    <p><span class="lang-th">ริมธารพานเหล็ก</span><span class="lang-en">Rim Than Phan Lek</span><span class="lang-cn">Rim Than Phan Lek</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
+                <h3><span class="lang-th">8. ต.หนองตรุด</span><span class="lang-en">8. Nong Trud</span><span class="lang-cn">8. Nong Trud</span></h3>
+                <p><span class="lang-th">มโนราห์ &amp; กลองยาว</span><span class="lang-en">Manora &amp; Long Drum</span><span class="lang-cn">诺拉舞 &amp; 长鼓</span></p>
+                <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
             </div>
+        </div>
 
-            <div class="card" onclick="openModal('m-natoming')">
-                <div class="card-img"><img src="https://www.lovethailand.org/images/banner/content/lovethailand_banner_20141407145244.jpg" alt="นาโต๊ะหมิง"></div>
-                <div class="card-content">
-                    <h3><span class="lang-th">4. ต.นาโต๊ะหมิง</span><span class="lang-en">4. Na To Ming</span><span class="lang-cn">4. Na To Ming</span></h3>
-                    <p><span class="lang-th">สวนพรุละหมาด</span><span class="lang-en">Phru Lamad Park</span><span class="lang-cn">Phru Lamad 公园</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
+        <div class="card" onclick="openModal('m-thapthiang')">
+            <div class="card-img"><img src="https://culturalenvi.onep.go.th/storage/pictures/2020/11/3/Zv4jEZNAqeT8Ora2km2jBwaLXsEvdvJJayMRjrnn.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Thap+Thiang';" alt="ทับเที่ยง"></div>
+            <div class="card-content">
+                <h3><span class="lang-th">9. ต.ทับเที่ยง</span><span class="lang-en">9. Thap Thiang</span><span class="lang-cn">9. Thap Thiang</span></h3>
+                <p><span class="lang-th">หอนาฬิกา &amp; หมูย่าง</span><span class="lang-en">Clock Tower &amp; Roast Pork</span><span class="lang-cn">钟楼 &amp; 烤猪肉</span></p>
+                <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
             </div>
+        </div>
 
-            <div class="card" onclick="openModal('m-naphla')">
-                <div class="card-img"><img src="https://montraanda.com/wp-content/uploads/2025/03/3b6ba328-7ad3-4026-8b1d-c843f3c7a2fb-3.jpg" alt="นาพละ"></div>
-                <div class="card-content">
-                    <h3><span class="lang-th">5. ต.นาพละ</span><span class="lang-en">5. Na Phla</span><span class="lang-cn">5. Na Phla</span></h3>
-                    <p><span class="lang-th">ข้าวเบายอดม่วง</span><span class="lang-en">GI Rice</span><span class="lang-cn">GI 大米</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
-            </div>
-
-            <div class="card" onclick="openModal('m-banpho')">
-                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCv0LW7nXRGrm9QBMCFxbKBnh26QfKCnXEzg&s" alt="บ้านโพธิ์"></div>
-                <div class="card-content">
-                    <h3><span class="lang-th">6. ต.บ้านโพธิ์</span><span class="lang-en">6. Ban Pho</span><span class="lang-cn">6. Ban Pho</span></h3>
-                    <p><span class="lang-th">วัดขุนสิทธิ์ & เรือพระ</span><span class="lang-en">Wat Khun Sit & Buddha Boat</span><span class="lang-cn">Khun Sit 寺 & 佛船</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
-            </div>
-
-            <div class="card" onclick="openModal('m-bankhuan')">
-                <div class="card-img"><img src="https://images.topnews.co.th/2025/02/Screenshot-2025-02-12-093115-1024x575.png?x-image-process=style/webp" alt="บ้านควน"></div>
-                <div class="card-content">
-                    <h3><span class="lang-th">7. ต.บ้านควน</span><span class="lang-en">7. Ban Khuan</span><span class="lang-cn">7. Ban Khuan</span></h3>
-                    <p><span class="lang-th">ประเพณีทานไฟ</span><span class="lang-en">Tan Fai Tradition</span><span class="lang-cn">烤火传统</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
-            </div>
-
-            <div class="card" onclick="openModal('m-nongtrud')">
-                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnSoM3JLAifDiNSDZIRO8oV4hmU69gMBTzVA&s" alt="หนองตรุ"></div>
-                <div class="card-content">
-                    <h3><span class="lang-th">8. ต.หนองตรุด</span><span class="lang-en">8. Nong Trud</span><span class="lang-cn">8. Nong Trud</span></h3>
-                    <p><span class="lang-th">มโนราห์ & กลองยาว</span><span class="lang-en">Manora & Long Drum</span><span class="lang-cn">诺拉舞 & 长鼓</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
-            </div>
-
-            <div class="card" onclick="openModal('m-thapthiang')">
-                <div class="card-img"><img src="https://culturalenvi.onep.go.th/storage/pictures/2020/11/3/Zv4jEZNAqeT8Ora2km2jBwaLXsEvdvJJayMRjrnn.jpeg" alt="ทับเที่ยง"></div>
-                <div class="card-content">
-                    <h3><span class="lang-th">9. ต.ทับเที่ยง</span><span class="lang-en">9. Thap Thiang</span><span class="lang-cn">9. Thap Thiang</span></h3>
-                    <p><span class="lang-th">หอนาฬิกา & หมูย่าง</span><span class="lang-en">Clock Tower & Roast Pork</span><span class="lang-cn">钟楼 & 烤猪肉</span></p>
-                    <button class="btn-card"><span class="lang-th">ดูรายละเอียด</span><span class="lang-en">View Details</span><span class="lang-cn">查看详情</span></button>
-                </div>
-            </div>
-
-            <div class="card" onclick="openModal('m-namphut')">
-                <div class="card-img"><img src="kai.jpg" alt="น้ำผุด"></div>
+        <div class="card" onclick="openModal('m-namphut')">
+                <div class="card-img"><img src="kai.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Nam+Phut';" alt="น้ำผุด"></div>
                 <div class="card-content">
                     <h3><span class="lang-th">10. ต.น้ำผุด</span><span class="lang-en">10. Nam Phut</span><span class="lang-cn">10. Nam Phut</span></h3>
                     <p><span class="lang-th">วิสาหกิจชุมชนเลี้ยงไก่ดำ</span><span class="lang-en">Black Chicken Enterprise</span><span class="lang-cn">黑鸡养殖企业</span></p>
@@ -430,7 +368,7 @@
             </div>
 
             <div class="card" onclick="openModal('m-nabinla')">
-                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABRsNDx85E8Ai4e_al8YakmW-CHgNfMGVdQ&s" alt="นาบินหลา"></div>
+                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABRsNDx85E8Ai4e_al8YakmW-CHgNfMGVdQ&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Na+Bin+La';" alt="นาบินหลา"></div>
                 <div class="card-content">
                     <h3><span class="lang-th">11. ต.นาบินหลา</span><span class="lang-en">11. Na Bin La</span><span class="lang-cn">11. Na Bin La</span></h3>
                     <p><span class="lang-th">พระสังกัจจายน์องค์ใหญ่</span><span class="lang-en">Giant Phra Sangkachai</span><span class="lang-cn">巨大的 Phra Sangkachai</span></p>
@@ -439,7 +377,7 @@
             </div>
 
             <div class="card" onclick="openModal('m-khuanpring')">
-                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcev-ZbLpJILw8OBF6n9m4kR8Z6jMt9jig_A&s" alt="ควนปริง"></div>
+                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcev-ZbLpJILw8OBF6n9m4kR8Z6jMt9jig_A&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Khuan+Pring';" alt="ควนปริง"></div>
                 <div class="card-content">
                     <h3><span class="lang-th">12. ต.ควนปริง</span><span class="lang-en">12. Khuan Pring</span><span class="lang-cn">12. Khuan Pring</span></h3>
                     <p><span class="lang-th">มีดพร้าบ้านนาป้อ</span><span class="lang-en">Na Po Knives</span><span class="lang-cn">Na Po 刀</span></p>
@@ -448,7 +386,7 @@
             </div>
 
             <div class="card" onclick="openModal('m-nathantai')">
-                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa99I-1uTGdyM0zOsJoOyTEOpvEgvJW2JNiw&s" alt="นาท่ามใต้"></div>
+                <div class="card-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa99I-1uTGdyM0zOsJoOyTEOpvEgvJW2JNiw&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Na+Tham+Tai';" alt="นาท่ามใต้"></div>
                 <div class="card-content">
                     <h3><span class="lang-th">13. ต.นาท่ามใต้</span><span class="lang-en">13. Na Tham Tai</span><span class="lang-cn">13. Na Tham Tai</span></h3>
                     <p><span class="lang-th">อ่างเก็บน้ำหนองเกียบ</span><span class="lang-en">Nong Kiap Reservoir</span><span class="lang-cn">Nong Kiap 水库</span></p>
@@ -457,7 +395,7 @@
             </div>
 
             <div class="card" onclick="openModal('m-nayongtai')">
-                <div class="card-img"><img src="nayongtai.jpg" alt="นาโยงใต้"></div>
+                <div class="card-img"><img src="nayongtai.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Na+Yong+Tai';" alt="นาโยงใต้"></div>
                 <div class="card-content">
                     <h3><span class="lang-th">14. ต.นาโยงใต้</span><span class="lang-en">14. Na Yong Tai</span><span class="lang-cn">14. Na Yong Tai</span></h3>
                     <p><span class="lang-th">จุดชมวิวควนสงฆ์</span><span class="lang-en">Khuan Song Viewpoint</span><span class="lang-cn">Khuan Song 观景点</span></p>
@@ -466,7 +404,7 @@
             </div>
 
             <div class="card" onclick="openModal('m-khoklo')">
-                <div class="card-img"><img src="kocklo.jpg" alt="โคกหล่อ"></div>
+                <div class="card-img"><img src="kocklo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Khok+Lo';" alt="โคกหล่อ"></div>
                 <div class="card-content">
                     <h3><span class="lang-th">15. ต.โคกหล่อ</span><span class="lang-en">15. Khok Lo</span><span class="lang-cn">15. Khok Lo</span></h3>
                     <p><span class="lang-th">วัดสาริการาม</span><span class="lang-en">Wat Sarikaram</span><span class="lang-cn">Sarikaram 寺</span></p>
@@ -477,6 +415,7 @@
         </div>
     </div>
 
+    <!-- Modals Section -->
     <div id="m-bangrak" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('m-bangrak')">×</span>
@@ -487,7 +426,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'br-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'br-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="br-hist" class="tab-pane show">
+            <div id="br-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ตำบลบางรักเป็นตำบลเก่าแก่ตำบลหนึ่งของจังหวัดตรัง และเป็นตำบลที่เป็นเมืองท่ามาแต่โบราณ โดยมีชาวจีนเข้ามาเทียบท่าและติดต่อค้าขายที่บ้านท่าจีน</span>
                     <span class="lang-en">Bang Rak is an ancient subdistrict of Trang and was a port town in the past. Chinese traders used to dock and trade at Ban Tha Chin.</span>
@@ -496,11 +435,11 @@
             </div>
             <div id="br-tour" class="tab-pane">
                 <h3><span class="lang-th">1. วัดแจ้ง (Wat Chaeng)</span><span class="lang-en">1. Wat Chaeng</span><span class="lang-cn">1. Wat Chaeng</span></h3>
-                <img src="https://api-wat.dmc.tv/uploads/_e4137c4947.jpg" alt="วัดแจ้ง">
+                <img src="https://api-wat.dmc.tv/uploads/_e4137c4947.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Wat+Chaeng';" alt="วัดแจ้ง">
                 <p><span class="lang-th">วัดเก่าแก่คู่บ้านคู่เมือง ตั้งอยู่บนเนินสูง สถาปัตยกรรมสวยงาม ร่มรื่นด้วยต้นไม้ใหญ่</span><span class="lang-en">An ancient temple located on a hill with beautiful architecture.</span><span class="lang-cn">位于山上的古老寺庙，建筑精美。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. เกาะแผนที่ประเทศไทย</span><span class="lang-en">2. Thailand Map Island</span><span class="lang-cn">2. 泰国地图岛</span></h3>
-                <img src="https://us-fbcloud.net/wb/data/1512/1512209-img.wc3ber.16v6w.jpg" alt="เกาะแผนที่ไทย">
+                <img src="https://us-fbcloud.net/wb/data/1512/1512209-img.wc3ber.16v6w.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Map+Island';" alt="เกาะแผนที่ไทย">
                 <p><span class="lang-th">เกาะกลางน้ำในอ่างเก็บน้ำบางรัก รูปร่างเหมือนแผนที่ประเทศไทยเมื่อมองจากมุมสูง</span><span class="lang-en">An island in Bang Rak Reservoir shaped like the map of Thailand.</span><span class="lang-cn">Bang Rak 水库中的一个岛屿，形状像泰国地图。</span></p>
             </div>
         </div>
@@ -516,7 +455,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'ntl-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'ntl-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="ntl-hist" class="tab-pane show">
+            <div id="ntl-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">""นาตาล่วง" เป็นตำนานที่ได้บอกเล่ากันมา ว่ามีชาย 2 คนได้เดินทางพักที่ควนทวด ต่อมานายด้วงได้ป่วยไข้ลงไม่สามารถเดินทางต่อได้ นายล่วง จึงบุกเบิกพื่้นที่ทำนาออกไปทุกๆ ปีตั้งรกรากที่นี้ จนเป็นทุ่งนาผืนใหญ่ ชาวบ้านตั้งชื่อว่า "นานายล่วง" หรือ "นาตาล่วง" ต่อมาตาด้วงได้เสียชีวิตที่ควนตาด้วง และชาวบ้านได้ทำอนุสรณ์เพื่อรำลึกถึงตาด้วงตลอดมา</span>
                     <span class="lang-en">"Na Ta Luang" comes from a legend of two men, Ta Duang and Ta Luang. Ta Duang fell ill, so Ta Luang settled down and cultivated rice fields here, which became known as "Na Ta Luang" (Ta Luang's Rice Field). Locals built a memorial for Ta Duang at Khuan Ta Duang.</span>
@@ -525,17 +464,17 @@
             </div>
             <div id="ntl-tour" class="tab-pane">
                 <h3><span class="lang-th">1. เขาสามบาตร</span><span class="lang-en">1. Khao Sam Bat</span><span class="lang-cn">1. Khao Sam Bat</span></h3>
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwuVHWOY2xeu11mcR_zr6vEdUnOtPaNvoYMQI58P5Mij9jK4v0wA4YIrR2XzSsJojNC1I_aR7fPQGkEYMRnhT7HYY2cGh-l4d9ilwzwptZzKTlEzEznCc-F0r6dCbKxciYPlCQNJXzWB71/s320/prapayneethai1265.jpg" alt="เขาสามบาตร">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwuVHWOY2xeu11mcR_zr6vEdUnOtPaNvoYMQI58P5Mij9jK4v0wA4YIrR2XzSsJojNC1I_aR7fPQGkEYMRnhT7HYY2cGh-l4d9ilwzwptZzKTlEzEznCc-F0r6dCbKxciYPlCQNJXzWB71/s320/prapayneethai1265.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Khao+Sam+Bat';" alt="เขาสามบาตร">
                 <p><span class="lang-th">ภูเขาหินปูนที่มีถ้ำสวยงามและสระน้ำภายใน เป็นแหล่งโบราณคดีที่สำคัญ</span><span class="lang-en">Limestone mountain with beautiful caves and archaeological sites.</span><span class="lang-cn">石灰岩山，拥有美丽的洞穴和考古遗址。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. ครามคูน (Kramkoon)</span><span class="lang-en">2. Kramkoon</span><span class="lang-cn">2. Kramkoon</span></h3>
-                <img src="https://mpics.mgronline.com/pics/Images/564000009476101.JPEG" alt="ครามคูน">
+                <img src="https://mpics.mgronline.com/pics/Images/564000009476101.JPEG" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Kramkoon';" alt="ครามคูน">
                 <p><span class="lang-th">แหล่งเรียนรู้และผลิตผ้ามัดย้อมสไตล์ชิโบริ เอกลักษณ์เมืองตรัง</span><span class="lang-en">Learning center for Shibori tie-dye fabric, unique to Trang.</span><span class="lang-cn">Shibori 扎染学习中心，董里独有。</span></p>
             </div>
         </div>
     </div>
 
-     <div id="m-nathannuea" class="modal">
+    <div id="m-nathannuea" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('m-nathannuea')">×</span>
             <div class="modal-header">
@@ -545,7 +484,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'ntn-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'ntn-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="ntn-hist" class="tab-pane show">
+            <div id="ntn-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ตําบลนาท่ามเหนือมีสภาพทางกายภาพส่วนใหญ่เป็นที่ราบ ราษฎรใช้ประกอบ อาชีพทางการเกษตรการทําสวนยางพารา ปลูกผลไม้และทำนา ไม่มีพื้นที่ป่าสมบูรณ์ และไม่มีต้นน้ําลําธารที่ไหลผ่านหมู่บ้าน ทําให้ตําบลนี้ขาดแคลนน้ําในฤดูแล้ง</span>
                     <span class="lang-en">Na Tham Nuea consists mostly of plains. Locals engage in agriculture, rubber plantations, fruit orchards, and rice farming. There are no abundant forests or streams flowing through the village, causing water shortages in the dry season.</span>
@@ -554,20 +493,12 @@
             </div>
             <div id="ntn-tour" class="tab-pane">
                 <h3><span class="lang-th">1. ริมธารพานเหล็ก</span><span class="lang-en">1. Rim Than Phan Lek</span><span class="lang-cn">1. Rim Than Phan Lek</span></h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq87n2ZeJhh-lKz7fDurxvoHx-HxlAvlJh-g&s" alt="ริมธาร">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq87n2ZeJhh-lKz7fDurxvoHx-HxlAvlJh-g&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Rim+Than';" alt="ริมธาร">
                 <p><span class="lang-th">จุดพักผ่อนเล่นน้ำริมคลองบรรยากาศดี ใกล้เส้นทางรถไฟ</span><span class="lang-en">Relaxing spot by the canal near the railway.</span><span class="lang-cn">铁路旁运河边的休闲场所。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. ศูนย์เรียนรู้ฯ บ้านเหรียงห้อง</span><span class="lang-en">2. Ban Riang Hong Learning Center</span><span class="lang-cn">2. Ban Riang Hong 学习中心</span></h3>
-                <img src="https://lh4.googleusercontent.com/proxy/3OCj1LErPRvpqUVGgz-dRe40pASbx9L_TZGMHlPoBHv7BP_Aim_EDppi9D7S3M2AxUmjBixS3h-dH8Y3dUwzTsy73ndChC1OgTA_WNSe70Dyw9Lzau75UiKzhc1YbYEBOEU4kQEZrtT0l-je-u8oTxDJ3FY" onerror="this.src='https://via.placeholder.com/800x400?text=Agri+Center'" alt="ศูนย์เรียนรู้">
+                <img src="https://lh4.googleusercontent.com/proxy/3OCj1LErPRvpqUVGgz-dRe40pASbx9L_TZGMHlPoBHv7BP_Aim_EDppi9D7S3M2AxUmjBixS3h-dH8Y3dUwzTsy73ndChC1OgTA_WNSe70Dyw9Lzau75UiKzhc1YbYEBOEU4kQEZrtT0l-je-u8oTxDJ3FY" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Agri+Center'" alt="ศูนย์เรียนรู้">
                 <p><span class="lang-th">ศูนย์เรียนรู้เกษตรทฤษฎีใหม่ตามแนวพระราชดำริ ต้นแบบชุมชนเข้มแข็ง</span><span class="lang-en">New Theory Agriculture Learning Center, a model for strong communities.</span><span class="lang-cn">新理论农业学习中心，强大社区的典范。</span></p>
-                <hr class="divider">
-                <h3><span class="lang-th">3. สวนไผ่ต้องตรัง</span><span class="lang-en">3. Suan Phai Tong Trang</span><span class="lang-cn">3. Suan Phai Tong Trang</span></h3>
-                <img src="suanpai.jpg" alt="สวนไผ่ต้องตรัง">
-                <p>
-                    <span class="lang-th">แลนด์มาร์คแห่งใหม่ เปลี่ยนสวนยางเป็นป่าไผ่ซางหม่นร่มรื่น มีตลาดอาหารพื้นบ้านเปิดเฉพาะเสาร์-อาทิตย์</span>
-                    <span class="lang-en">A new landmark converted from a rubber plantation to a shady bamboo grove, featuring a weekend local food market.</span>
-                    <span class="lang-cn">由橡胶园改建而成的凉爽竹林新地标，周末设有当地美食市场。</span>
-                </p>
             </div>
         </div>
     </div>
@@ -582,7 +513,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'ntm-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'ntm-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="ntm-hist" class="tab-pane show">
+            <div id="ntm-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ชื่อตำบล "นาโต๊ะหมิง" มาจากเจ้าของนาผู้เป็นชาวมุสลิม ชื่อว่า "โต๊ะหมิง" ซึ่งเป็นที่รู้จักและเรียกขานสืบต่อกันมา</span>
                     <span class="lang-en">The name "Na To Ming" comes from the name of a Muslim rice field owner named "To Ming".</span>
@@ -591,11 +522,11 @@
             </div>
             <div id="ntm-tour" class="tab-pane">
                 <h3><span class="lang-th">1. สวนสาธารณะพรุละหมาด</span><span class="lang-en">1. Phru Lamad Public Park</span><span class="lang-cn">1. Phru Lamad 公园</span></h3>
-                <img src="https://www.lovethailand.org/images/banner/content/lovethailand_banner_20141407145244.jpg" alt="สวนพรุละหมาด">
+                <img src="https://www.lovethailand.org/images/banner/content/lovethailand_banner_20141407145244.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Park';" alt="สวนพรุละหมาด">
                 <p><span class="lang-th">สถานที่พักผ่อนหย่อนใจ มีศาลากลางน้ำและบรรยากาศร่มรื่น</span><span class="lang-en">Recreation area with a pavilion in the water and shady atmosphere.</span><span class="lang-cn">休闲区，水中有凉亭，环境阴凉。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. วัดนาโต๊ะหมิง (วัดศรัทธาธรรม)</span><span class="lang-en">2. Wat Na To Ming</span><span class="lang-cn">2. Na To Ming 寺</span></h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJYsPT7Lp4armECq3W80bviH3Yop1Ls8wdvg&s" onerror="this.src='https://via.placeholder.com/800x400?text=Temple'" alt="วัดนาโต๊ะหมิง">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJYsPT7Lp4armECq3W80bviH3Yop1Ls8wdvg&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Temple'" alt="วัดนาโต๊ะหมิง">
                 <p><span class="lang-th">วัดศูนย์รวมจิตใจของชาวบ้านในพื้นที่ เป็นสถานที่ประกอบศาสนกิจที่สำคัญ</span><span class="lang-en">Spiritual center of the villagers, an important place for religious ceremonies.</span><span class="lang-cn">村民的精神中心，重要的宗教活动场所。</span></p>
             </div>
         </div>
@@ -611,7 +542,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'npl-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'npl-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="npl-hist" class="tab-pane show">
+            <div id="npl-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">จาก "นาพระ" กลายเป็น "นาพละ" ในสมัยอยุธยาได้มีประกาศกัลปนาวัดในหัวเมืองพัทลุงและนครศรีธรรมราช ซึ่งในตำนานเมืองพัทลุงกล่าวว่า วัดที่ขึ้นกับวัดสทังและวัดเขียนบางแก้วมีจำนวน 298 วัด รวมทั้งวัดพระพุทธสิหิงค์และวัดพระงามที่ตรัง การประกาศกัลปนาเป็นเรื่องที่พระมหากษัตริย์ทรงอุทิศไร่นาอันเป็นของหลวงให้แก่พระสงฆ์ในพุทธศาสนา ซึ่งในเพลาวัดเขียนบางแก้วฉบับหนึ่งกล่าวถึงวัดพระพุทธสิหิงค์ไว้ว่า “วัดพระศรีหึง มหาโพธฺโมลีเป็นหัววัด หมื่นพัดเจดีย์เป็นนายอนาพยาบาล มีข้าพระเจ็ดหัวงาน นางทองหัวงาน 1 นางพรมหัวงาน 1 นางพัดหัวงาน 1 นางเพาแก้วหัวงาน 1 นางทองดีหัวงาน 1 นางออนจันหัวงาน 1 นางรัดทองหัวงาน 1” หัวงานของวัดพระพุทธสิหิงค์อยู่ทางฝั่งขวาของคลองนางน้อยตามที่ตั้งวัด คงจะเรียกชื่อชุมชนกัลปนาของวัดกันว่านาพระตั้งแต่สมัยนั้น ต่อมา พ.ศ. 2355 ในทำเนียบกรมการเมืองของเก่ากล่าวถึง "บ้านนาพระ" ว่ามี 9 เรือน อยู่ใกล้ๆ กับบ้านหัวเขา บ้านนางน้อย เมื่อมีพระราชบัญญัติปกครองท้องที่ฉบับแรก พ.ศ. 2440 บ้านต่าง ๆ รวมกันเป็นตำบล ซึ่งพบว่าต่อมา พ.ศ. 2459 ทางราชการได้สำรวจและจัดทำแผนที่หัวเมืองต่างๆ มีชื่อ "บ้านนาพละ” ตำบลนางน้อย อยู่ในตำแหน่งนาพละปัจจุบัน ชื่อนาพละคงเขียนเปลี่ยนไปจากการสำรวจทำแผนที่ในครั้งนั้น ต่อมาทางราชการมีการปรับปรุงเขตตำบลกันใหม่ทำให้บริเวณนี้ได้ชื่อว่า "ตำบลนาพละ"</span>
                     <span class="lang-en">The name evolved from "Na Phra" to "Na Phla." During the Ayutthaya period, King Rama allocated royal lands (Kalpana) to temples in the Phatthalung and Nakhon Si Thammarat regions. Ancient records mention this area as "Ban Na Phra" with 9 households in 1812. In 1916, during a government survey and mapping project, the name was officially recorded as "Ban Na Phla," which has been used as the subdistrict name ever since.</span>
@@ -620,11 +551,11 @@
             </div>
             <div id="npl-tour" class="tab-pane">
                 <h3><span class="lang-th">1. ข้าวเบายอดม่วง (GI)</span><span class="lang-en">1. Khao Bao Yod Muang (GI Rice)</span><span class="lang-cn">1. Khao Bao Yod Muang (GI 大米)</span></h3>
-                <img src="https://montraanda.com/wp-content/uploads/2025/03/3b6ba328-7ad3-4026-8b1d-c843f3c7a2fb-3.jpg" alt="ข้าวเบายอดม่วง">
+                <img src="https://montraanda.com/wp-content/uploads/2025/03/3b6ba328-7ad3-4026-8b1d-c843f3c7a2fb-3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Rice';" alt="ข้าวเบายอดม่วง">
                 <p><span class="lang-th">ข้าวพันธุ์พื้นเมืองตรัง เปลือกสีม่วง รสชาตินุ่ม อร่อย</span><span class="lang-en">Trang's indigenous rice with purple husk, soft texture.</span><span class="lang-cn">董里本土稻米，紫色外壳，口感柔软。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. ลูกหยีแปรรูป</span><span class="lang-en">2. Processed Velvet Tamarind</span><span class="lang-cn">2. 加工罗望子</span></h3>
-                <img src="https://thaiotopvillage.com/wp-content/uploads/2023/01/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%AB%E0%B8%A2%E0%B8%B5-11-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%AB%E0%B8%A2%E0%B8%B5.jpg" alt="ลูกหยี">
+                <img src="https://thaiotopvillage.com/wp-content/uploads/2023/01/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%AB%E0%B8%A2%E0%B8%B5-11-%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%AB%E0%B8%A2%E0%B8%B5.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Snack';" alt="ลูกหยี">
                 <p><span class="lang-th">สินค้า OTOP ขึ้นชื่อ รสชาติเปรี้ยวอมหวาน ของฝากที่ต้องซื้อ</span><span class="lang-en">Famous OTOP product with a sweet and sour taste.</span><span class="lang-cn">著名的 OTOP 产品，酸甜可口。</span></p>
             </div>
         </div>
@@ -640,7 +571,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'bp-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'bp-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="bp-hist" class="tab-pane show">
+            <div id="bp-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">เล่ากันว่า ในพื้นที่แห่งนี้มีวัดเกิดขึ้นเป็นวัดแรกของจังหวัดตรัง ประกอบกับมีต้นโพธิ์ขนาดใหญ่เกิดขึ้นกลางวัด จึงเรียกวัดแห่งนี้ว่าวัดโพธิ์ หรือเรียกอีกชื่อว่าวัดโพธาราม ประกอบกับพื้นที่ตำบลนี้ยังไม่มีชื่อ จึงเอาชื่อจากวัดโพธิ์ มาตั้งเป็นชื่อบ้าน ว่าบ้านโพธิ์ หรือตำบลบ้านโพธิ์ในปัจจุบัน</span>
                     <span class="lang-en">The first temple in Trang was built here with a large Bodhi tree, hence the name "Ban Pho".</span>
@@ -649,7 +580,7 @@
             </div>
             <div id="bp-tour" class="tab-pane">
                 <h3><span class="lang-th">1. วัดขุนสิทธิ์ (เรือพระ)</span><span class="lang-en">1. Wat Khun Sit (Buddha Boat)</span><span class="lang-cn">1. Khun Sit 寺 (佛船)</span></h3>
-                <img src="reapra.jpg" alt="เรือพระ">
+                <img src="reapra.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Boat';" alt="เรือพระ">
                 <p>
                     <span class="lang-th">ชมความงดงามของเรือพระแกะสลักที่มักได้รับรางวัลชนะเลิศ</span>
                     <span class="lang-en">Witness the exquisite beauty of carved Buddha boats (Ruea Phra), which often win top awards for their craftsmanship.</span>
@@ -657,7 +588,7 @@
                 </p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. สระพรุหลุมพี</span><span class="lang-en">2. Sa Phru Lum Phi</span><span class="lang-cn">2. Phru Lum Phi 池塘</span></h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuMDZdcK7mttCyoqmIZ9Qg48qUK9tfW4haqA&s" onerror="this.src='https://via.placeholder.com/800x400?text=Natural+Pond'" alt="สระพรุหลุมพี">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuMDZdcK7mttCyoqmIZ9Qg48qUK9tfW4haqA&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Natural+Pond'" alt="สระพรุหลุมพี">
                 <p><span class="lang-th">แหล่งน้ำธรรมชาติขนาดใหญ่ บรรยากาศเงียบสงบ เหมาะแก่การพักผ่อน</span><span class="lang-en">Large natural pond with a peaceful atmosphere.</span><span class="lang-cn">大型天然池塘，环境宁静。</span></p>
             </div>
         </div>
@@ -673,7 +604,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'bk-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'bk-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="bk-hist" class="tab-pane show">
+            <div id="bk-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">คำว่า “ควน” ในภาษาใต้ มักหมายถึง “เนิน / ที่สูง / ควน” ซึ่งสื่อถึงภูมิประเทศในอดีต ซึ่งอาจเป็นเนินสูงหรือยกตัวขึ้นเล็กน้อยในพื้นที่ราบรอบข้าง “บ้านควน” จึงอาจหมายถึง “หมู่บ้านบนควน” หรือ “หมู่บ้านบนเนิน” ซึ่งสอดคล้องกับภูมิทัศน์ที่อาจไม่ราบลุ่มมากนักในตำบลนี้</span>
                     <span class="lang-en">"Khuan" means hill. "Ban Khuan" means Village on a Hill.</span>
@@ -682,11 +613,11 @@
             </div>
             <div id="bk-tour" class="tab-pane">
                 <h3><span class="lang-th">1. วัดควนนาแค (ประเพณีทานไฟ)</span><span class="lang-en">1. Wat Khuan Na Kae</span><span class="lang-cn">1. Khuan Na Kae 寺</span></h3>
-                <img src="https://images.topnews.co.th/2025/02/Screenshot-2025-02-12-093115-1024x575.png?x-image-process=style/webp" alt="ทานไฟ">
+                <img src="https://images.topnews.co.th/2025/02/Screenshot-2025-02-12-093115-1024x575.png?x-image-process=style/webp" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Tradition';" alt="ทานไฟ">
                 <p><span class="lang-th">สถานที่จัดประเพณีทานไฟอันเก่าแก่ในวันมาฆบูชา</span><span class="lang-en">Venue for the ancient "Tan Fai" tradition.</span><span class="lang-cn">万佛节举行的古老“烤火”仪式的举办地。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. คาเฟ่ Baankhuan Foresta</span><span class="lang-en">2. Baankhuan Foresta Cafe</span><span class="lang-cn">2. Baankhuan Foresta 咖啡馆</span></h3>
-                <img src="https://img.wongnai.com/p/400x0/2022/04/12/172c9e611ffa4b4eb78e2822b71c50b0.jpg" onerror="this.src='https://via.placeholder.com/800x400?text=Cafe'" alt="Baankhuan Foresta">
+                <img src="https://img.wongnai.com/p/400x0/2022/04/12/172c9e611ffa4b4eb78e2822b71c50b0.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Cafe'" alt="Baankhuan Foresta">
                 <p><span class="lang-th">คาเฟ่บรรยากาศธรรมชาติ รายล้อมด้วยพื้นที่สีเขียว เหมาะสำหรับพักผ่อน</span><span class="lang-en">Nature-themed cafe surrounded by greenery.</span><span class="lang-cn">自然主题咖啡馆，环境优美。</span></p>
             </div>
         </div>
@@ -702,7 +633,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'ntr-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'ntr-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="ntr-hist" class="tab-pane show">
+            <div id="ntr-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ดั้งเดิมมีหนองน้ำอยู่ในบริเวณ หมู่ที่ 1 และเป็นที่ราบลุ่มน้ำขังตลอดทั้งปี มีต้นไม้ชนิดหนึ่งชื่อว่า ต้นตรุดขึ้นเป็นจำนวนมาก จึงมีชื่อเรียกกันติดปากว่า “หนองตรุด”</span>
                     <span class="lang-en">Named after a swamp (Nong) where many "Trud" trees grew.</span>
@@ -711,11 +642,11 @@
             </div>
             <div id="ntr-tour" class="tab-pane">
                 <h3><span class="lang-th">1. แหล่งศิลปะการแสดงพื้นบ้าน</span><span class="lang-en">1. Folk Performance Arts</span><span class="lang-cn">1. 民间表演艺术</span></h3>
-                <img src="https://news.thaipbs.or.th/media/TSNBg3wSBdng7ijM75QDzU6gXdAmXMiwbxOEEGyzPZn.jpg" alt="มโนราห์">
+                <img src="https://news.thaipbs.or.th/media/TSNBg3wSBdng7ijM75QDzU6gXdAmXMiwbxOEEGyzPZn.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Culture';" alt="มโนราห์">
                 <p><span class="lang-th">ศูนย์อนุรักษ์มโนราห์และกลองยาว มรดกทางวัฒนธรรมปักษ์ใต้</span><span class="lang-en">Conservation center for Manora and Long Drum.</span><span class="lang-cn">诺拉舞和长鼓保护中心。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. วัดเชี่ยวชาญกิจ</span><span class="lang-en">2. Wat Chiao Chan Kit</span><span class="lang-cn">2. Chiao Chan Kit 寺</span></h3>
-                <img src="https://images.dmc.tv/ebook/page/original_1761808073187.jpg" onerror="this.src='https://via.placeholder.com/800x400?text=Temple'" alt="วัดเชี่ยวชาญกิจ">
+                <img src="https://images.dmc.tv/ebook/page/original_1761808073187.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Temple'" alt="วัดเชี่ยวชาญกิจ">
                 <p>
                     <span class="lang-th">วัดเก่าแก่คู่ชุมชน สร้างโดยขุนเชี่ยวชาญกิจ เป็นที่เคารพศรัทธา</span>
                     <span class="lang-en">An ancient temple built by Khun Chiao Chan Kit, serving as a revered spiritual center for the community.</span>
@@ -723,7 +654,7 @@
                 </p>
                 <hr class="divider">
                 <h3><span class="lang-th">3. กลุ่มกลองยาวพื้นบ้าน</span><span class="lang-en">3. Local Long Drum Group</span><span class="lang-cn">3. 当地长鼓队</span></h3>
-                <img src="glongyaw.jpg" onerror="this.src='https://via.placeholder.com/800x400?text=Long+Drum'" alt="กลองยาว">
+                <img src="glongyaw.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Long+Drum'" alt="กลองยาว">
                 <p>
                     <span class="lang-th">เป็นการรวมตัวของชาวบ้านหมู่ที่ 3 ตำบลหนองตรุด ในการอนุรักษ์การรำกลองยาว</span>
                     <span class="lang-en">A local assembly of villagers from Moo 3 dedicated to preserving the traditional Long Drum dance.</span>
@@ -743,7 +674,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'tt-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'tt-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="tt-hist" class="tab-pane show">
+            <div id="tt-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ชื่อ "ทับเที่ยง" มาจากสมัยที่พระบาทสมเด็จพระจุลจอมเกล้าเจ้าอยู่หัว (รัชกาลที่ 5) เสด็จฯ ถึงจังหวัดตรังในเวลาเที่ยง จึงได้สร้างที่ประทับ ณ เวลานั้น และตั้งชื่อเป็น "ทับเที่ยง"</span>
                     <span class="lang-en">Named "Thap Thiang" (Noon Pavilion) when King Rama V arrived in Trang at noon.</span>
@@ -752,11 +683,11 @@
             </div>
             <div id="tt-tour" class="tab-pane">
                 <h3><span class="lang-th">1. หอนาฬิกาตรัง</span><span class="lang-en">1. Trang Clock Tower</span><span class="lang-cn">1. 董里钟楼</span></h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmuDklLcCksfPnWhRnecSDjpSlDJ95dT93Bw&s" alt="หอนาฬิกา">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmuDklLcCksfPnWhRnecSDjpSlDJ95dT93Bw&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Clock+Tower';" alt="หอนาฬิกา">
                 <p><span class="lang-th">แลนด์มาร์คสำคัญใจกลางเมือง สถาปัตยกรรมสวยงาม</span><span class="lang-en">Important landmark in the city center.</span><span class="lang-cn">市中心的重要地标。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. หมูย่างเมืองตรัง</span><span class="lang-en">2. Trang Roast Pork</span><span class="lang-cn">2. 董里烤猪</span></h3>
-                <img src="mooyang.jfif" onerror="this.src='https://via.placeholder.com/800x400?text=Roast+Pork'" alt="หมูย่าง">
+                <img src="mooyang.jfif" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Roast+Pork'" alt="หมูย่าง">
                 <p><span class="lang-th">ของดีประจำจังหวัด หนังกรอบ เนื้อนุ่ม รสชาติอร่อยเลื่องลือ</span><span class="lang-en">Famous provincial product, crispy skin, tender meat.</span><span class="lang-cn">著名特产，皮脆肉嫩。</span></p>
             </div>
         </div>
@@ -772,7 +703,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'np-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'np-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="np-hist" class="tab-pane show">
+            <div id="np-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ในพื้นที่ตำบลน้ำผุด ได้มีตาน้ำผุดขึ้นมาจากใต้ดิน ซึ่งปัจจุบันคือบริเวณวัดน้ำผุด หมู่ที่ 1 ตำบลน้ำผุด ชาวบ้านเลยเรียกชื่อว่า บ้านน้ำผุด ต่อมาก็มีการจัดตั้งตำบลขึ้น จึงได้ใช้ชื่อเรียกว่า “ตำบลน้ำผุด” เป็นต้นมา</span>
                     <span class="lang-en">Named after natural springs (Nam Phut) rising from underground.</span>
@@ -781,15 +712,15 @@
             </div>
             <div id="np-tour" class="tab-pane">
                 <h3><span class="lang-th">1. วิสาหกิจชุมชนเลี้ยงไก่ดำบ้านเขาหลัก</span><span class="lang-en">1. Black Chicken Enterprise</span><span class="lang-cn">1. 黑鸡养殖社区企业</span></h3>
-                <img src="kai.jpg" alt="ไก่ดำ">
+                <img src="kai.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Chicken';" alt="ไก่ดำ">
                 <p><span class="lang-th">กลุ่มชุมชนที่รวมตัวกันเลี้ยงไก่ดำแบบธรรมชาติเพื่อสร้างอาชีพ</span><span class="lang-en">Community group raising black chickens naturally.</span><span class="lang-cn">旨在饲养黑鸡以创造就业机会的社区团体。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. วัดภูเขาทอง</span><span class="lang-en">2. Wat Phu Khao Thong</span><span class="lang-cn">2. 金山寺</span></h3>
-                <img src="phukawthong.jpg" alt="วัดภูเขาทอง">
+                <img src="phukawthong.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Temple';" alt="วัดภูเขาทอง">
                 <p><span class="lang-th">ประดิษฐานพระพุทธรูปทรงเทริดมโนราห์ และอุโบสถอันงดงาม</span><span class="lang-en">Houses a Buddha image wearing a Manora headdress.</span><span class="lang-cn">寺内供奉着一尊戴着诺拉头饰的佛像。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">3. ล่องแก่งบ้านเขาหลัก</span><span class="lang-en">3. Ban Khao Lak Bamboo Rafting</span><span class="lang-cn">3. Ban Khao Lak 漂流</span></h3>
-                <img src="https://d2d3n9ufwugv3m.cloudfront.net/w1168-h656-cfill/trips/3c2rj-listing-cover.jpg" alt="ล่องแก่ง">
+                <img src="https://d2d3n9ufwugv3m.cloudfront.net/w1168-h656-cfill/trips/3c2rj-listing-cover.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Rafting';" alt="ล่องแก่ง">
                 <p><span class="lang-th">สัมผัสกิจกรรมล่องแก่งท่ามกลางธรรมชาติที่อุดมสมบูรณ์</span><span class="lang-en">Experience rafting amidst lush nature.</span><span class="lang-cn">在大自然中体验刺激的漂流活动。</span></p>
             </div>
         </div>
@@ -805,7 +736,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'nb-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'nb-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="nb-hist" class="tab-pane show">
+            <div id="nb-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ตำนานชื่อบ้านนาบินหลา คำว่า “นาบินหลา” มาจากศาลา 5 หลัง ของตำบล ซึ่งชาวบ้านเรียกว่า “เบ็ญจศาลา” และชาวบ้านได้เรียกต่อ ๆ กันมาจนในที่สุดเพี้ยนเป็น “บินหลา” และในพื้นที่ของตำบลชาวบ้านมีอาชีพทำนาเป็นหลัก จึงเรียกชื่อว่า “บ้านนาบินหลา” จนถึงปัจจุบันนี้</span>
                     <span class="lang-en">Distorted from "Benja Sala" (Five Pavilions) and rice farming.</span>
@@ -814,11 +745,11 @@
             </div>
             <div id="nb-tour" class="tab-pane">
                 <h3><span class="lang-th">1. พระสังกัจจายน์องค์ใหญ่</span><span class="lang-en">1. Giant Phra Sangkachai</span><span class="lang-cn">1. 巨大的 Phra Sangkachai</span></h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABRsNDx85E8Ai4e_al8YakmW-CHgNfMGVdQ&s" alt="พระสังกัจจายน์">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABRsNDx85E8Ai4e_al8YakmW-CHgNfMGVdQ&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Statue';" alt="พระสังกัจจายน์">
                 <p><span class="lang-th">สักการะรูปปั้นพระสังกัจจายน์ขนาดใหญ่ที่วัดทุ่งหินผุด</span><span class="lang-en">Worship the large Phra Sangkachai statue.</span><span class="lang-cn">参拜巨大的 Phra Sangkachai 雕像。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. วัดทุ่งหินผุด</span><span class="lang-en">2. Wat Thung Hin Phut</span><span class="lang-cn">2. Wat Thung Hin Phut 寺</span></h3>
-                <img src="hinpud.jpg" alt="วัดทุ่งหินผุด">
+                <img src="hinpud.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Temple';" alt="วัดทุ่งหินผุด">
                 <p><span class="lang-th">สร้างเมื่อ พ.ศ. 2460 มีพระประธานงดงามและลานธรรมร่มรื่น</span><span class="lang-en">Built in 1917, spiritual center of the area.</span><span class="lang-cn">建于 1917 年，当地的精神中心。</span></p>
             </div>
         </div>
@@ -834,7 +765,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'kp-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'kp-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="kp-hist" class="tab-pane show">
+            <div id="kp-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">"ตำบลควนปริง อำเภอเมืองตรัง จังหวัดตรัง ตั้งอยู่ในพื้นที่ที่มีลักษณะภูมิประเทศเป็นเนินเขาและแหล่งน้ำ ซึ่งคำว่า "ควน" หมายถึงเนินเขา และ "ปริง" หมายถึง บึงน้ำ ชุมชนในตำบลนี้เริ่มตั้งถิ่นฐานมาตั้งแต่สมัยโบราณ และทำการเกษตรเป็นหลัก เช่น การปลูกยางพาราและสวนผลไม้ ปัจจุบันตำบลควนปริงมีการพัฒนาทางเศรษฐกิจและสาธารณูปโภคให้สะดวกสบายขึ้น ทั้งการศึกษาและการบริการสาธารณสุขก็ดีขึ้นเรื่อยๆ ทำให้ตำบลควนปริงมีความเจริญเติบโตอย่างต่อเนื่องในปัจจุบัน</span>
                     <span class="lang-en">"Khuan" means hill, and "Pring" means pond.</span>
@@ -843,11 +774,11 @@
             </div>
             <div id="kp-tour" class="tab-pane">
                 <h3><span class="lang-th">1. หมู่บ้านตีมีดนาป้อ</span><span class="lang-en">1. Na Po Blacksmith Village</span><span class="lang-cn">1. Na Po 铁匠村</span></h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcev-ZbLpJILw8OBF6n9m4kR8Z6jMt9jig_A&s" alt="มีดพร้า">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcev-ZbLpJILw8OBF6n9m4kR8Z6jMt9jig_A&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Knife';" alt="มีดพร้า">
                 <p><span class="lang-th">ชมกรรมวิธีการผลิตมีดพร้าแบบดั้งเดิม สินค้า OTOP</span><span class="lang-en">Observe the traditional knife-making process.</span><span class="lang-cn">观看传统的制刀工艺。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. วัดควนปริงวนาราม</span><span class="lang-en">2. Wat Khuan Pring Wanaram</span><span class="lang-cn">2. Khuan Pring Wanaram 寺</span></h3>
-                <img src="https://images.dmc.tv/ebook/page/original_1755333454360.jpg" alt="วัดควนปริง">
+                <img src="https://images.dmc.tv/ebook/page/original_1755333454360.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Temple';" alt="วัดควนปริง">
                 <p><span class="lang-th">ศูนย์รวมจิตใจของชุมชนและใช้จัดกิจกรรมทางศาสนา</span><span class="lang-en">Spiritual center of the community.</span><span class="lang-cn">社区的精神中心。</span></p>
             </div>
         </div>
@@ -863,7 +794,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'ntt-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'ntt-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="ntt-hist" class="tab-pane show">
+            <div id="ntt-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">เล่ากันมาว่ามีพระนางองค์หนึ่งพร้อมด้วยข้าทาสบริวารจำนวนหลายคนเดินทางผ่านมาหมู่บ้านนี้ ชาวบ้านจึงเรียกชื่อหมู่บ้านนี้ว่า “บ้านนางข้าม” ต่อมาเรียกชื่อเพี้ยนเป็นบ้านนาท่าม บ้านนาท่ามมีพื้นที่กว้างขวางมาก ปัจจุบันแบ่งอาณาเขตเป็นบ้านนาท่ามเหนือและบ้านนาท่ามใต้</span>
                     <span class="lang-en">Derived from "Ban Nang Kham" (Lady Crossing Village).</span>
@@ -872,7 +803,7 @@
             </div>
             <div id="ntt-tour" class="tab-pane">
                 <h3><span class="lang-th">1. อ่างเก็บน้ำบ้านหนองเกียบ</span><span class="lang-en">1. Nong Kiap Reservoir</span><span class="lang-cn">1. Nong Kiap 水库</span></h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa99I-1uTGdyM0zOsJoOyTEOpvEgvJW2JNiw&s" alt="อ่างเก็บน้ำ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa99I-1uTGdyM0zOsJoOyTEOpvEgvJW2JNiw&s" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Reservoir';" alt="อ่างเก็บน้ำ">
                 <p><span class="lang-th">บรรยากาศเงียบสงบ เหมาะแก่การพักผ่อน</span><span class="lang-en">Peaceful atmosphere for relaxation.</span><span class="lang-cn">环境宁静，适合休闲。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. เขาต่อยไห</span><span class="lang-en">2. Khao Toi Hai</span><span class="lang-cn">2. Khao Toi Hai 山</span></h3>
@@ -892,7 +823,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'nyt-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'nyt-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="nyt-hist" class="tab-pane show">
+            <div id="nyt-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">ที่มาของตำบลนาโยงใต้ ไม่พบข้อมูลที่แน่ชัด แต่สันนิษฐานว่า นาโยงมาจากผืนนาที่มีการเลี้ยงวัว และมีการนำวัวไปโยง(ผูก)ในนาเป็นจำนวนมาก จึงเป็นที่มาของคำว่านาโยง ต่อมามีการแบ่งพื้นที่เป็นนาโยงเหนือและนาโยงใต้ ปัจจุบันมีการแบ่งพื้นที่ปกครองตำบลนาโยงเหนือ อยู่ในเขตอำเภอนาโยง ส่วนตำบลนาโยงใต้ อยู่ในเขตอำเภอเมืองตรัง</span>
                     <span class="lang-en">The origin is assumed to come from the word "Yong" (meaning to tie), referring to the many cows tied in the rice fields. Later, the area was split into Na Yong Nuea and Na Yong Tai.</span>
@@ -901,11 +832,11 @@
             </div>
             <div id="nyt-tour" class="tab-pane">
                 <h3><span class="lang-th">1. จุดชมวิว 360 องศา (ควนสงฆ์)</span><span class="lang-en">1. Khuan Song Viewpoint</span><span class="lang-cn">1. Khuan Song 观景点</span></h3>
-                <img src="nayongtai.jpg" alt="วิวควนสงฆ์">
+                <img src="nayongtai.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Viewpoint';" alt="วิวควนสงฆ์">
                 <p><span class="lang-th">จุดชมวิวบนยอดเขา มองเห็นทิวทัศน์เมืองตรัง</span><span class="lang-en">Mountain viewpoint overlooking Trang city.</span><span class="lang-cn">山顶观景点，可俯瞰董里市。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. วัดโคกพิกุล</span><span class="lang-en">2. Wat Khok Phikul</span><span class="lang-cn">2. Khok Phikul 寺</span></h3>
-                <img src="pikul.jpg" onerror="this.src='https://via.placeholder.com/800x400?text=Temple'" alt="วัดโคกพิกุล">
+                <img src="pikul.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Temple'" alt="วัดโคกพิกุล">
                 <p>
                     <span class="lang-th">วัดประจำชุมชนที่ชาวบ้านใช้เป็นศูนย์รวมจิตใจ</span>
                     <span class="lang-en">A community temple that serves as the spiritual heart of the local villagers.</span>
@@ -925,7 +856,7 @@
                 <button class="tab-btn active" onclick="openTab(event, 'kl-hist')"><span class="lang-th">ประวัติความเป็นมา</span><span class="lang-en">History</span><span class="lang-cn">历史</span></button>
                 <button class="tab-btn" onclick="openTab(event, 'kl-tour')"><span class="lang-th">สถานที่ท่องเที่ยว</span><span class="lang-en">Attractions</span><span class="lang-cn">景点</span></button>
             </div>
-            <div id="kl-hist" class="tab-pane show">
+            <div id="kl-hist" class="tab-pane" style="display: block;">
                 <p>
                     <span class="lang-th">เมื่อประมาณปีพุทธศักราช 2433 ได้มีชาวบ้านอพยพมาอาศัยและตั้งถิ่นฐานในพื้นที่บริเวณนี้ ซึ่งมีสภาพพื้นที่ ส่วนใหญ่เป็นที่ราบสูงเรียกว่า “ โคก ” และมีต้นหล่อขึ้นอยู่บริเวณที่ราบสูงแห่งนี้เป็นจำนวนมาก ชาวบ้านจึงเรียกบริเวณนี้ว่า “ โคกหล่อ ” ต่อมาเมื่อทางราชการประกาศแยกตำบล ก็ได้จัดตั้งเป็น “ตำบลโคกหล่อ ” มาจนถึงปัจจุบัน</span>
                     <span class="lang-en">Terrain mostly high ground ("Khok"), abundant with "Lo" trees.</span>
@@ -934,7 +865,7 @@
             </div>
             <div id="kl-tour" class="tab-pane">
                 <h3><span class="lang-th">1. หลวงพ่อกาแก้ว (วัดสาริการาม)</span><span class="lang-en">1. Luang Phor Ka Kaeo</span><span class="lang-cn">1. Luang Phor Ka Kaeo</span></h3>
-                <img src="kocklo.jpg" alt="วัดสาริการาม">
+                <img src="kocklo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Temple';" alt="วัดสาริการาม">
                 <p><span class="lang-th">พระพุทธรูปศักดิ์สิทธิ์คู่บ้านคู่เมืองตรัง</span><span class="lang-en">Sacred Buddha image highly revered by locals.</span><span class="lang-cn">董里神圣的佛像。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">2. ดอกไม้ประดิษฐ์จากเกล็ดปลา</span><span class="lang-en">2. Fish Scale Flowers</span><span class="lang-cn">2. 鱼鳞花</span></h3>
@@ -942,16 +873,33 @@
                 <p><span class="lang-th">สินค้า OTOP ฝีมือกลุ่มแม่บ้านตำบลโคกหล่อ</span><span class="lang-en">OTOP product hand-crafted by housewives.</span><span class="lang-cn">由家庭主妇制作的 OTOP 产品。</span></p>
                 <hr class="divider">
                 <h3><span class="lang-th">3. ผ้าบาติกลายดอกศรีตรัง</span><span class="lang-en">3. Sri Trang Batik Fabric</span><span class="lang-cn">3. Sri Trang 蜡染布</span></h3>
-                <img src="batic.jpg" onerror="this.src='https://via.placeholder.com/800x400?text=Batik'" alt="ผ้าบาติก">
+                <img src="batic.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Batik'" alt="ผ้าบาติก">
                 <p><span class="lang-th">การออกแบบลวดลายอัตลักษณ์หนึ่งเดียวของชมรมผู้สูงอายุเทศบาลตำบลโคกหล่อ</span><span class="lang-en">Unique identity design by the Khok Lo Elderly Club.</span><span class="lang-cn">Khok Lo 老年俱乐部的独特设计。</span></p>
             </div>
         </div>
     </div>
 
+    <!-- Cleaned up JavaScript -->
     <script>
+        // Language Switcher
+        function setLanguage(lang) {
+            let allLangs = document.querySelectorAll('.lang-th, .lang-en, .lang-cn');
+            allLangs.forEach(el => el.style.display = 'none');
+
+            let selectedLangs = document.querySelectorAll('.lang-' + lang);
+            selectedLangs.forEach(el => {
+                if(el.tagName === 'SPAN' || el.parentElement.tagName === 'A' || el.tagName === 'B') {
+                    el.style.display = 'inline';
+                } else {
+                    el.style.display = 'block';
+                }
+            });
+        }
+
+        // Modal Controls
         function openModal(modalId) {
             document.getElementById(modalId).style.display = "block";
-            document.body.style.overflow = "hidden";
+            document.body.style.overflow = "hidden"; // Prevent background scrolling
         }
 
         function closeModal(modalId) {
@@ -959,33 +907,35 @@
             document.body.style.overflow = "auto";
         }
 
+        // Close modal when clicking outside of it
         window.onclick = function(event) {
-            if (event.target.className === 'modal') {
+            if (event.target.classList.contains('modal')) {
                 event.target.style.display = "none";
                 document.body.style.overflow = "auto";
             }
         }
 
+        // Tab Controls inside Modal
         function openTab(evt, tabName) {
-            var i, tabPane, tabBtn;
-            var modalContent = evt.currentTarget.closest('.modal-content');
+            let modalContent = evt.currentTarget.closest('.modal-content');
             
-            tabPane = modalContent.getElementsByClassName("tab-pane");
-            for (i = 0; i < tabPane.length; i++) {
-                tabPane[i].style.display = "none";
-                tabPane[i].classList.remove("show");
+            // Hide all tab content
+            let tabPanes = modalContent.getElementsByClassName("tab-pane");
+            for (let i = 0; i < tabPanes.length; i++) {
+                tabPanes[i].style.display = "none";
             }
             
-            tabBtn = modalContent.getElementsByClassName("tab-btn");
-            for (i = 0; i < tabBtn.length; i++) {
-                tabBtn[i].className = tabBtn[i].className.replace(" active", "");
+            // Remove 'active' class from all buttons
+            let tabBtns = modalContent.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
             }
             
-            var selectedTab = modalContent.querySelector('#' + tabName);
+            // Show the selected tab and set button as active
+            let selectedTab = modalContent.querySelector('#' + tabName);
             if(selectedTab){
                 selectedTab.style.display = "block";
-                setTimeout(() => selectedTab.classList.add("show"), 10);
-                evt.currentTarget.className += " active";
+                evt.currentTarget.classList.add("active");
             }
         }
     </script>
